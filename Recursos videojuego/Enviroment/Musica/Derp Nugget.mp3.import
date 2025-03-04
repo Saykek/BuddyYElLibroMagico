@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cifg6oeh3l32k"
+path="res://.godot/imported/Derp Nugget.mp3-685f3e0d148a4c00c5f19cee504478ea.mp3str"
+
+[deps]
+
+source_file="res://Enviroment/Musica/Derp Nugget.mp3"
+dest_files=["res://.godot/imported/Derp Nugget.mp3-685f3e0d148a4c00c5f19cee504478ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
