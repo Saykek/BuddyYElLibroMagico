@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=3 uid="uid://48ox5758hurj"]
+
+[ext_resource type="Texture2D" uid="uid://c32gyd1elnc7s" path="res://Enviroment/MundoLetras/img/Letras/letraB.png" id="1_qyakp"]
+[ext_resource type="Script" path="res://Enviroment/MundoLetras/bloques_letras.gd" id="1_rr26t"]
+[ext_resource type="Texture2D" uid="uid://cbrs886nuuc3s" path="res://Enviroment/MundoLetras/img/Letras/letraI.png" id="2_xqplx"]
+[ext_resource type="Texture2D" uid="uid://bkmlocwugej5b" path="res://Enviroment/MundoLetras/img/Letras/letraL.png" id="3_lctie"]
+[ext_resource type="Texture2D" uid="uid://cj1bkqkeklhib" path="res://Enviroment/MundoLetras/img/Letras/letraO.png" id="4_wos5v"]
+[ext_resource type="Texture2D" uid="uid://d1uw1s3bu3ieo" path="res://Enviroment/MundoLetras/img/Letras/letraR.png" id="5_saxcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_453vb"]
+size = Vector2(253.261, 253.31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuy5g"]
+size = Vector2(258, 246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrg7y"]
+size = Vector2(253, 246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb3m0"]
+size = Vector2(304.546, 272.727)
+
+[node name="bloques" type="Node2D"]
+visible = false
+script = ExtResource("1_rr26t")
+metadata/_edit_group_ = true
+
+[node name="letraB" type="Node2D" parent="."]
+position = Vector2(189, -110)
+
+[node name="sb_b" type="StaticBody2D" parent="letraB"]
+position = Vector2(-0.0012207, -0.000259399)
+scale = Vector2(1, 0.999999)
+
+[node name="col_b" type="CollisionShape2D" parent="letraB/sb_b"]
+position = Vector2(349, 228)
+scale = Vector2(0.221116, 0.213178)
+shape = SubResource("RectangleShape2D_453vb")
+metadata/_edit_group_ = true
+
+[node name="sp_b" type="Sprite2D" parent="letraB/sb_b"]
+position = Vector2(348.001, 228.001)
+scale = Vector2(0.221116, 0.213178)
+texture = ExtResource("1_qyakp")
+
+[node name="letraI" type="Node2D" parent="."]
+position = Vector2(-251, -196)
+
+[node name="sb_i" type="StaticBody2D" parent="letraI"]
+position = Vector2(283.688, 227)
+scale = Vector2(0.220331, 0.209302)
+
+[node name="col_i" type="CollisionShape2D" parent="letraI/sb_i"]
+position = Vector2(1.41827, 4.77776)
+scale = Vector2(1.00356, 1.01852)
+shape = SubResource("RectangleShape2D_453vb")
+metadata/_edit_group_ = true
+
+[node name="sp_i" type="Sprite2D" parent="letraI/sb_i"]
+texture = ExtResource("2_xqplx")
+
+[node name="letraL" type="Node2D" parent="."]
+position = Vector2(120, -64)
+
+[node name="sb_l" type="StaticBody2D" parent="letraL"]
+position = Vector2(729.52, 162.08)
+scale = Vector2(0.22, 0.22)
+
+[node name="cs_l" type="CollisionShape2D" parent="letraL/sb_l"]
+position = Vector2(988.546, 26.9091)
+shape = SubResource("RectangleShape2D_iuy5g")
+metadata/_edit_group_ = true
+
+[node name="sp_l" type="Sprite2D" parent="letraL/sb_l"]
+position = Vector2(984, 36)
+texture = ExtResource("3_lctie")
+
+[node name="letraO" type="Node2D" parent="."]
+position = Vector2(1052, -481)
+scale = Vector2(0.22, 0.22)
+
+[node name="sb_o" type="StaticBody2D" parent="letraO"]
+
+[node name="cs_o" type="CollisionShape2D" parent="letraO/sb_o"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_nrg7y")
+metadata/_edit_group_ = true
+
+[node name="sp_o" type="Sprite2D" parent="letraO/sb_o"]
+texture = ExtResource("4_wos5v")
+
+[node name="letraR" type="Node2D" parent="."]
+position = Vector2(2261, 164)
+scale = Vector2(0.22, 0.22)
+
+[node name="sb_r" type="StaticBody2D" parent="letraR"]
+
+[node name="cs_r" type="CollisionShape2D" parent="letraR/sb_r"]
+position = Vector2(-4.54594, -4.54547)
+scale = Vector2(0.856585, 0.845284)
+shape = SubResource("RectangleShape2D_tb3m0")
+
+[node name="sp_r" type="Sprite2D" parent="letraR/sb_r"]
+texture = ExtResource("5_saxcm")

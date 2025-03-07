@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvj6kg7uas184"]
+
+[ext_resource type="Texture2D" uid="uid://cs365ebbmor2" path="res://Personajes/img/Enemigos/Idle.png" id="1_10ce4"]
+[ext_resource type="Script" path="res://Personajes/enemigos_estaticos/enemigo_pinchos.gd" id="1_xe6h3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cetu0"]
+size = Vector2(21, 8)
+
+[node name="enemigo_pinchos" type="Node2D"]
+script = ExtResource("1_xe6h3")
+
+[node name="area_pinchos" type="Area2D" parent="."]
+position = Vector2(1, 1)
+metadata/_edit_group_ = true
+
+[node name="col_pinchos" type="CollisionShape2D" parent="area_pinchos"]
+position = Vector2(293.5, 268)
+shape = SubResource("RectangleShape2D_cetu0")
+
+[node name="sp_pinchos" type="Sprite2D" parent="area_pinchos"]
+position = Vector2(295, 257)
+scale = Vector2(2.125, 2)
+texture = ExtResource("1_10ce4")
+
+[connection signal="body_entered" from="area_pinchos" to="." method="_on_area_pinchos_body_entered"]

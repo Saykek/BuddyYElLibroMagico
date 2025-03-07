@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://boynrcat0tusf"]
+
+[ext_resource type="Texture2D" uid="uid://djxnwjnampowg" path="res://Enviroment/UI/botones/letter.png" id="1_2s64r"]
+[ext_resource type="Script" path="res://Enviroment/MundoLetras/btn_reiniciar.gd" id="1_2soc2"]
+[ext_resource type="FontFile" uid="uid://d01ndqba30unk" path="res://Enviroment/UI/tipo_letras/DiloWorld.ttf" id="2_c076s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x88me"]
+font = ExtResource("2_c076s")
+font_size = 42
+outline_size = 15
+outline_color = Color(0.0392157, 0.0313726, 0.054902, 1)
+
+[node name="txt_reiniciar" type="TextureButton"]
+anchors_preset = -1
+anchor_right = 0.222
+anchor_bottom = 0.16
+offset_right = 0.255981
+offset_bottom = 0.319992
+script = ExtResource("1_2soc2")
+
+[node name="Letter" type="Sprite2D" parent="."]
+position = Vector2(130, 50)
+scale = Vector2(0.984375, 0.421875)
+texture = ExtResource("1_2s64r")
+
+[node name="Label" type="Label" parent="Letter"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.926
+offset_left = -84.2927
+offset_top = -29.5385
+offset_right = -177.293
+offset_bottom = -168.595
+text = "REINICIAR"
+label_settings = SubResource("LabelSettings_x88me")
+
+[connection signal="pressed" from="." to="." method="reiniciar_on_pressed"]

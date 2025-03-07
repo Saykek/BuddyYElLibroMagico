@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbwk0orrmj4yg"]
+
+[ext_resource type="Texture2D" uid="uid://ke3g1bwe3613" path="res://menu/img/Portada.jpg" id="1_3g7ys"]
+[ext_resource type="Script" path="res://menu/menu.gd" id="1_k2q7n"]
+[ext_resource type="FontFile" uid="uid://dtqq2kjgsmjsv" path="res://Enviroment/UI/tipo_letras/letters_for_learners/Letters for Learners.ttf" id="1_rcuou"]
+[ext_resource type="FontFile" uid="uid://d01ndqba30unk" path="res://Enviroment/UI/tipo_letras/DiloWorld.ttf" id="2_ehyw1"]
+[ext_resource type="AudioStream" uid="uid://blbfrvrp4lwr6" path="res://Enviroment/Musica/Sergio%27s Magic Dustbin.mp3" id="5_h634f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rn1vx"]
+font = ExtResource("1_rcuou")
+font_size = 30
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6152"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3vdu2"]
+font = ExtResource("2_ehyw1")
+font_size = 81
+font_color = Color(0.717594, 0.977416, 0.861871, 1)
+outline_size = 9
+outline_color = Color(0.0235294, 0.0156863, 0.0313726, 1)
+shadow_size = 15
+shadow_color = Color(0.988235, 0.94902, 0.956863, 0.898039)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k2q7n")
+
+[node name="VBox_menu" type="VBoxContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 879.0
+offset_top = 536.0
+offset_right = -23.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lbl_opciones" type="Label" parent="VBox_menu"]
+layout_mode = 2
+text = "        OPCIONES:"
+label_settings = SubResource("LabelSettings_rn1vx")
+
+[node name="btn_empezar" type="Button" parent="VBox_menu"]
+layout_mode = 2
+text = "Empezar"
+
+[node name="btn_salir" type="Button" parent="VBox_menu"]
+layout_mode = 2
+text = "Salir"
+icon = SubResource("AtlasTexture_f6152")
+
+[node name="sp_menu2" type="Sprite2D" parent="."]
+position = Vector2(579, 323)
+scale = Vector2(1.28444, 1.28571)
+texture = ExtResource("1_3g7ys")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 67.0
+offset_right = 1131.0
+offset_bottom = 331.0
+text = "     Buddy y 
+El Libro 				Mágico"
+label_settings = SubResource("LabelSettings_3vdu2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_h634f")
+autoplay = true
+parameters/looping = false
+
+[connection signal="pressed" from="VBox_menu/btn_empezar" to="." method="_on_btn_empezar_pressed"]
+[connection signal="pressed" from="VBox_menu/btn_salir" to="." method="_on_btn_salir_pressed"]

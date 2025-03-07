@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbcf5yppfixv2"]
+
+[ext_resource type="Texture2D" uid="uid://c1iv3d7t4whct" path="res://Enviroment/img/fondos/Background/bg_grasslands.png" id="1_q2j25"]
+
+[node name="fondo" type="Node2D"]
+z_index = 1
+
+[node name="fondo1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(592, 318)
+scale = Vector2(1.15625, 1.32227)
+texture = ExtResource("1_q2j25")
+
+[node name="fondo2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1802.5, 317)
+scale = Vector2(1.20801, 1.31641)
+texture = ExtResource("1_q2j25")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1210.44, 823.875)
+scale = Vector2(2.36804, 7.09326)
+texture = ExtResource("1_q2j25")

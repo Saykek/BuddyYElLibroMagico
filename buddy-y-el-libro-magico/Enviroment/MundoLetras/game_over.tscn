@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://cua4glxdg8xe7"]
+
+[ext_resource type="Script" path="res://Enviroment/MundoLetras/game_over.gd" id="1_wqlja"]
+[ext_resource type="Texture2D" uid="uid://poc77pqcnd22" path="res://menu/img/gameover.jpg.webp" id="1_xerj1"]
+[ext_resource type="PackedScene" uid="uid://boynrcat0tusf" path="res://Enviroment/MundoLetras/btn_reiniciar.tscn" id="3_eju3l"]
+[ext_resource type="FontFile" uid="uid://cvuqi2siiauvt" path="res://Enviroment/UI/tipo_letras/pinky_show/Pinky Show.ttf" id="4_ge4ck"]
+[ext_resource type="PackedScene" uid="uid://84nenp31osvq" path="res://Enviroment/MundoLetras/boton_salir.tscn" id="4_nxp1f"]
+[ext_resource type="AudioStream" uid="uid://bly4qtjhjnwfp" path="res://Enviroment/Musica/Magic Escape Room.mp3" id="6_kll6x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ynouq"]
+font = ExtResource("4_ge4ck")
+font_size = 130
+font_color = Color(0.0313726, 0.027451, 0.0470588, 1)
+outline_size = 33
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqlja")
+
+[node name="sp_gameover" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(1.13281, 1.11538)
+texture = ExtResource("1_xerj1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="txt_reiniciar" parent="TextureRect" instance=ExtResource("3_eju3l")]
+z_index = 2
+layout_mode = 2
+anchors_preset = 0
+offset_left = 72.0
+offset_top = 448.0
+offset_right = 319.12
+offset_bottom = 545.6
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="txt_salir" parent="TextureRect" instance=ExtResource("4_nxp1f")]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 448.0
+offset_right = 1080.0
+offset_bottom = 552.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 96.0
+offset_right = 807.0
+offset_bottom = 491.0
+text = "GAME
+OVER"
+label_settings = SubResource("LabelSettings_ynouq")
+
+[node name="musica_gameover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_kll6x")
+autoplay = true
+parameters/looping = false

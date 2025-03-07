@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://84nenp31osvq"]
+
+[ext_resource type="Script" path="res://Enviroment/MundoLetras/boton_salir.gd" id="1_ak77j"]
+[ext_resource type="Texture2D" uid="uid://djxnwjnampowg" path="res://Enviroment/UI/botones/letter.png" id="1_e8ett"]
+[ext_resource type="FontFile" uid="uid://d01ndqba30unk" path="res://Enviroment/UI/tipo_letras/DiloWorld.ttf" id="2_oueql"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y5cur"]
+font = ExtResource("2_oueql")
+font_size = 42
+outline_size = 15
+outline_color = Color(0.0117647, 0.0156863, 0.0196078, 1)
+
+[node name="txt_salir" type="TextureButton"]
+offset_left = 8.0
+offset_right = 320.0
+offset_bottom = 128.0
+script = ExtResource("1_ak77j")
+metadata/_edit_group_ = true
+
+[node name="Letter" type="Sprite2D" parent="."]
+position = Vector2(121, 51)
+scale = Vector2(0.992187, 0.414062)
+texture = ExtResource("1_e8ett")
+
+[node name="Label" type="Label" parent="Letter"]
+offset_left = -50.8493
+offset_top = -22.069
+offset_right = 49.1507
+offset_bottom = 28.931
+text = "SALIR"
+label_settings = SubResource("LabelSettings_y5cur")
+
+[connection signal="pressed" from="." to="." method="salir_on_pressed"]

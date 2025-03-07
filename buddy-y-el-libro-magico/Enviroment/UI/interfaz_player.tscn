@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://betwow75mfib0"]
+
+[ext_resource type="Script" path="res://Enviroment/UI/Contador/contador.gd" id="1_24jrm"]
+[ext_resource type="FontFile" uid="uid://dtqq2kjgsmjsv" path="res://Enviroment/UI/tipo_letras/letters_for_learners/Letters for Learners.ttf" id="2_v2hfv"]
+[ext_resource type="Texture2D" uid="uid://dpp5p5835wxt6" path="res://Personajes/img/imgKnight/Idle (6).png" id="3_xop41"]
+[ext_resource type="Texture2D" uid="uid://e515kr1bsty1" path="res://Coleccionables/img/Bronze/Bronze_1.png" id="4_o0vpp"]
+[ext_resource type="FontFile" uid="uid://bu3ukt6isgu3g" path="res://Enviroment/UI/tipo_letras/JMH Typewriter-Black.ttf" id="5_yubum"]
+[ext_resource type="Texture2D" uid="uid://c32gyd1elnc7s" path="res://Enviroment/MundoLetras/img/Letras/letraB.png" id="6_qq5ie"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b8rh8"]
+font = ExtResource("2_v2hfv")
+font_size = 23
+font_color = Color(0.0117647, 0.0117647, 0.0313726, 1)
+outline_size = 3
+outline_color = Color(0.0431373, 0.0235294, 0.0392157, 1)
+shadow_size = 6
+shadow_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_im7n8"]
+font = ExtResource("5_yubum")
+font_size = 24
+font_color = Color(0.956863, 0.415686, 0.0588235, 1)
+outline_size = 1
+outline_color = Color(0.0214346, 0.0214346, 0.0214346, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7tg1l"]
+font = ExtResource("5_yubum")
+font_size = 24
+font_color = Color(0.649598, 0.239057, 0.0253187, 1)
+
+[node name="interfaz_player" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -2.0
+offset_right = 25.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_24jrm")
+
+[node name="HBoxVida" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 188.0
+offset_right = 521.0
+offset_bottom = 252.0
+
+[node name="lbl_vida" type="Label" parent="HBoxVida"]
+z_index = 3
+layout_mode = 2
+size_flags_horizontal = 8
+label_settings = SubResource("LabelSettings_b8rh8")
+
+[node name="sp_vida" type="Sprite2D" parent="HBoxVida"]
+position = Vector2(44, 30)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_xop41")
+
+[node name="HBoxContador" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 199.0
+offset_right = 407.0
+offset_bottom = 240.0
+
+[node name="sp_moneda" type="Sprite2D" parent="HBoxContador"]
+position = Vector2(53, 19)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_o0vpp")
+
+[node name="lbl_contador" type="Label" parent="HBoxContador"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_im7n8")
+
+[node name="HBoxLetras" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 194.0
+offset_right = 335.0
+offset_bottom = 235.0
+
+[node name="sp_letras" type="Sprite2D" parent="HBoxLetras"]
+position = Vector2(43, 24)
+scale = Vector2(0.13745, 0.131783)
+texture = ExtResource("6_qq5ie")
+
+[node name="lbl_letras" type="Label" parent="HBoxLetras"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_7tg1l")

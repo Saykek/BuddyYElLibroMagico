@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj86caxfqx82d"]
+
+[ext_resource type="Texture2D" uid="uid://dhsgf8x3cqiab" path="res://Personajes/img/Enemigos/Jelly.png" id="3_afxu6"]
+[ext_resource type="Script" path="res://Personajes/enemigos_dinamicos/enemigo_oso.gd" id="3_ckc3t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bn1lf"]
+radius = 19.4165
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l04sj"]
+atlas = ExtResource("3_afxu6")
+region = Rect2(0, 344, 346, 344)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fmadm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l04sj")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ww2cf"]
+radius = 24.7271
+
+[node name="enemigo_oso" type="Node2D" groups=["enemigo"]]
+position = Vector2(160, 69)
+
+[node name="enemigo_oso" type="CharacterBody2D" parent="."]
+position = Vector2(-159, -70)
+script = ExtResource("3_ckc3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo_oso"]
+position = Vector2(161.5, 69)
+shape = SubResource("CircleShape2D_bn1lf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemigo_oso"]
+position = Vector2(161.5, 69)
+scale = Vector2(0.130058, 0.145349)
+sprite_frames = SubResource("SpriteFrames_fmadm")
+animation = &"1"
+
+[node name="area_oso" type="Area2D" parent="enemigo_oso" groups=["enemigo"]]
+position = Vector2(159, 70)
+
+[node name="col_oso" type="CollisionShape2D" parent="enemigo_oso/area_oso"]
+scale = Vector2(1.04261, 0.980563)
+shape = SubResource("CircleShape2D_ww2cf")
+
+[connection signal="body_entered" from="enemigo_oso/area_oso" to="enemigo_oso" method="_on_area_oso_body_entered"]

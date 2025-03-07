@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0vvte0hdrt0j"]
+
+[ext_resource type="Texture2D" uid="uid://c32gyd1elnc7s" path="res://Enviroment/MundoLetras/img/Letras/letraB.png" id="1_h3w0v"]
+[ext_resource type="Script" path="res://Coleccionables/area_letra_1.gd" id="1_ruver"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lde1k"]
+size = Vector2(263, 273)
+
+[node name="Area_letra1" type="Area2D"]
+script = ExtResource("1_ruver")
+metadata/_edit_group_ = true
+
+[node name="col_area_letra" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_lde1k")
+
+[node name="sp_letra1" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_h3w0v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

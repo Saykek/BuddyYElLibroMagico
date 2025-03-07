@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1bmf4kqrq1ey"]
+
+[ext_resource type="Texture2D" uid="uid://c1iv3d7t4whct" path="res://Enviroment/img/fondos/Background/bg_grasslands.png" id="1_sde7h"]
+[ext_resource type="Texture2D" uid="uid://bmrx03eh1yhmp" path="res://Enviroment/img/fondos/Background/nubes.png" id="2_bn8uy"]
+[ext_resource type="Texture2D" uid="uid://bignm3p283fqm" path="res://Enviroment/img/fondos/Background/montañaVerde.png" id="3_agued"]
+[ext_resource type="Texture2D" uid="uid://brs0jcdriwqn6" path="res://Enviroment/img/fondos/Background/layer6.PNG" id="4_g63pi"]
+[ext_resource type="Texture2D" uid="uid://d01dvuxax41cw" path="res://Enviroment/img/tiles/individuales/18.png" id="5_ochiq"]
+[ext_resource type="Texture2D" uid="uid://nm8e3cgv22o1" path="res://Enviroment/img/tiles/individuales/17.png" id="6_2uh3y"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="layer_fondo" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1100, 0)
+
+[node name="sp_fondo" type="Sprite2D" parent="layer_fondo"]
+position = Vector2(576, 336)
+scale = Vector2(1.125, 1.25)
+texture = ExtResource("1_sde7h")
+
+[node name="sp_fondo2" type="Sprite2D" parent="layer_fondo"]
+z_index = -1
+position = Vector2(864, 1664)
+scale = Vector2(1.67969, 12.625)
+texture = ExtResource("1_sde7h")
+
+[node name="layer_fondo3" type="ParallaxLayer" parent="."]
+position = Vector2(104, -120)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1100, 0)
+
+[node name="sp_nube" type="Sprite2D" parent="layer_fondo3"]
+position = Vector2(472, -488)
+scale = Vector2(0.143667, 0.140333)
+texture = ExtResource("2_bn8uy")
+
+[node name="sp_nube2" type="Sprite2D" parent="layer_fondo3"]
+position = Vector2(368, 264)
+scale = Vector2(0.07325, 0.0830833)
+texture = ExtResource("2_bn8uy")
+
+[node name="layer_fondo2" type="ParallaxLayer" parent="."]
+position = Vector2(104, -120)
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="MontañaVerde" type="Sprite2D" parent="layer_fondo2"]
+position = Vector2(1672, 504)
+scale = Vector2(0.35744, 0.298355)
+texture = ExtResource("3_agued")
+
+[node name="MontañaVerde2" type="Sprite2D" parent="layer_fondo2"]
+position = Vector2(-40, 512)
+scale = Vector2(0.35744, 0.298355)
+texture = ExtResource("3_agued")
+
+[node name="layer_arbusto" type="ParallaxLayer" parent="."]
+position = Vector2(104, -120)
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="Layer6" type="Sprite2D" parent="layer_arbusto"]
+position = Vector2(248, 768)
+texture = ExtResource("4_g63pi")
+
+[node name="Layer7" type="Sprite2D" parent="layer_arbusto"]
+position = Vector2(888, 768)
+texture = ExtResource("4_g63pi")
+
+[node name="Layer8" type="Sprite2D" parent="layer_arbusto"]
+position = Vector2(1480, 776)
+texture = ExtResource("4_g63pi")
+
+[node name="Layer9" type="Sprite2D" parent="layer_arbusto"]
+position = Vector2(2112, 784)
+texture = ExtResource("4_g63pi")
+
+[node name="layer_agua" type="ParallaxLayer" parent="."]
+visible = false
+position = Vector2(128, -128)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="sp_agua" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1152, 632)
+scale = Vector2(18.2188, 1)
+texture = ExtResource("5_ochiq")
+
+[node name="sp_espuma" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1152, 608)
+scale = Vector2(18.125, 1)
+texture = ExtResource("6_2uh3y")

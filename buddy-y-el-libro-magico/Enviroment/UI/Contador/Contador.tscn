@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccquqbx7ulshx"]
+
+[ext_resource type="Script" path="res://Enviroment/UI/Contador/contador.gd" id="1_5wwuh"]
+[ext_resource type="Texture2D" uid="uid://e515kr1bsty1" path="res://Coleccionables/img/Bronze/Bronze_1.png" id="2_0uf2l"]
+
+[node name="Contador" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5wwuh")
+
+[node name="HBoxContador" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="sp_moneda" type="Sprite2D" parent="HBoxContador"]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_0uf2l")
+
+[node name="lbl_contador" type="Label" parent="HBoxContador"]
+layout_mode = 2
